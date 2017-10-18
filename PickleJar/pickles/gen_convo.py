@@ -1,5 +1,5 @@
-from PickleJar.Senses.stt import listen
-from PickleJar.Senses.tts import say
+from Senses.stt import listen
+from Senses.tts import say
 
 import random
 
