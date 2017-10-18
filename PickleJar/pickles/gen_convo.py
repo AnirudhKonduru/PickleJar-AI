@@ -1,5 +1,5 @@
-from YaVa.Senses.stt import listen
-from YaVa.Senses.tts import say
+from PickleJar.Senses.stt import listen
+from PickleJar.Senses.tts import say
 
 import random
 

@@ -13,8 +13,8 @@ def listen():
     try:
         text = r.recognize_google(audio)
         print("RECOGNISED: "+text)
-        return str(text)
     except sr.UnknownValueError:
         print("Failed to recognize Audio")
     except sr.RequestError as e:
         print("Failed to request from google SR; {0}".format(e))
+    return text

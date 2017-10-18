@@ -1,5 +1,5 @@
-from YaVa.Senses.stt import listen
-from YaVa.Senses.tts import say
+from Senses.stt import listen
+from Senses.tts import say
 
 import random
 from datetime import datetime
