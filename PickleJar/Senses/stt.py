@@ -7,8 +7,8 @@ def listen():
         r.adjust_for_ambient_noise(source)
         print("Listening...")
         audio = r.listen(source)
-        with open("recording.flac", "wb") as f:
-            f.write(audio.get_flac_data())
+#        with open("recording.flac", "wb") as f:
+#            f.write(audio.get_flac_data())
 
     try:
         text = r.recognize_google(audio)
