@@ -10,6 +10,7 @@ def listen():
 #        with open("recording.flac", "wb") as f:
 #            f.write(audio.get_flac_data())
 
+    text = ""
     try:
         text = r.recognize_google(audio)
         print("RECOGNISED: "+text)
@@ -17,4 +18,6 @@ def listen():
         print("Failed to recognize Audio")
     except sr.RequestError as e:
         print("Failed to request from google SR; {0}".format(e))
+    if text=="":
+        return None
     return text
