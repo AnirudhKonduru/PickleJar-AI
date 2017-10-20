@@ -31,6 +31,8 @@ def take_note(s):
     say("What would you like me to note down?")
     note = listen()
     resp = c.execute('INSERT INTO notes VALUES(?,?,?)', ("default", datetime.now().date(), note))
+    conn.commit()
+    conn.close()
     print(resp)
     return "note saved"
 
@@ -38,4 +40,5 @@ def take_note(s):
 def show_notes(s):
     for row in conn.execute('SELECT * FROM notes ORDER BY username'):
         print("NOTE:", row)
+        conn.close()
     return "displaying all notes"
