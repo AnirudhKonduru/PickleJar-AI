@@ -18,6 +18,6 @@ def listen():
         print("Failed to recognize Audio")
     except sr.RequestError as e:
         print("Failed to request from google SR; {0}".format(e))
-    if text=="":
+    if text == "":
         return None
     return text

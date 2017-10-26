@@ -1,16 +1,16 @@
-from Senses.stt import listen
-from Senses.tts import say
+from Senses.input import listen
+from Senses.output import say
 
 import random
 from datetime import datetime
+
+
 triggers = {
-
-'datefunc':[['what', 'date']]
-
+    'date_func': [['what', 'date']]
 }
 
 
-def datefunc(s):
+def date_func(s):
     print(str(datetime.now().date()))
     say(str(datetime.now().date()))
     return str(datetime.now().date().strftime('%A %d %B %Y'))
