@@ -3,7 +3,8 @@ import importlib
 INSTALLED_PICKLES = [
     "gen_convo",
     "date_time",
-    "notes"
+    "notes",
+    "tweet"
 ]
 
 def process(s):

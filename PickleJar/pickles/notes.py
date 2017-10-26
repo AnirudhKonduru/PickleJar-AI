@@ -11,6 +11,9 @@ triggers = {
         ['take','note'],
         ['write','note'],
         ['save', 'note'],
+        ['take','notes'],
+        ['write','notes'],
+        ['save', 'notes'],
         ['note', 'down']
     ],
 
@@ -18,13 +21,21 @@ triggers = {
         ['show', 'note'],
         ['show', 'notes'],
         ['print', 'notes']
-    ]
+    ],
+
+	'tell_notes':[
+		['tell','note']
+	] 
+
 
 }
 
-conn = sqlite3.connect("notes.db")
+conn = sqlite3.connect('notes.db')
 c = conn.cursor()
 c.execute("CREATE TABLE IF NOT EXISTS notes(username VARCHAR(8), date date, text text)")
+
+conn.commit()
+
 
 
 def take_note(s):
@@ -32,7 +43,6 @@ def take_note(s):
     note = listen()
     resp = c.execute('INSERT INTO notes VALUES(?,?,?)', ("default", datetime.now().date(), note))
     conn.commit()
-    conn.close()
     print(resp)
     return "note saved"
 
@@ -40,5 +50,11 @@ def take_note(s):
 def show_notes(s):
     for row in conn.execute('SELECT * FROM notes ORDER BY username'):
         print("NOTE:", row)
-        conn.close()
     return "displaying all notes"
+
+def tell_notes(s):
+	for row in conn.execute('SELECT * FROM notes ORDER BY username'):
+		convert_to_string = lambda t: "%s-%s-%s" % t
+		say(strings)
+
+	return "end of notes" 
