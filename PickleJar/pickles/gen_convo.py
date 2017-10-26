@@ -12,7 +12,7 @@ triggers = {
 
 def who_are_you(s):
     resp=[
-    "Hi, I'm Pickle Bot",
+    "Hi, I'm Oorugai",
     "My name is Pickle Bot"
     ]
     return random.choice(resp)

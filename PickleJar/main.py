@@ -2,7 +2,6 @@ import sys
 import yaml
 from process import process
 
-
 from Senses.stt import listen
 from Senses.tts import say
 

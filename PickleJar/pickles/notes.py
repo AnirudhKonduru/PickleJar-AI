@@ -25,7 +25,7 @@ triggers = {
 
 	'tell_notes':[
 		['tell','note']
-	] 
+	]
 
 
 }
@@ -36,8 +36,6 @@ c.execute("CREATE TABLE IF NOT EXISTS notes(username VARCHAR(8), date date, text
 
 conn.commit()
 
-
-
 def take_note(s):
     say("What would you like me to note down?")
     note = listen()
@@ -45,7 +43,6 @@ def take_note(s):
     conn.commit()
     print(resp)
     return "note saved"
-
 
 def show_notes(s):
     for row in conn.execute('SELECT * FROM notes ORDER BY username'):
@@ -57,4 +54,4 @@ def tell_notes(s):
 		convert_to_string = lambda t: "%s-%s-%s" % t
 		say(strings)
 
-	return "end of notes" 
+	return "end of notes"
