@@ -4,6 +4,7 @@ from Senses.tts import say
 from datetime import datetime
 
 import sqlite3
+import time
 
 triggers = {
 
@@ -24,10 +25,9 @@ triggers = {
     ],
 
 	'tell_notes':[
-		['tell','note']
+		['tell','note'],
+        ['tell','notes']
 	]
-
-
 }
 
 conn = sqlite3.connect('notes.db')
@@ -50,8 +50,11 @@ def show_notes(s):
     return "displaying all notes"
 
 def tell_notes(s):
-	for row in conn.execute('SELECT * FROM notes ORDER BY username'):
-		convert_to_string = lambda t: "%s-%s-%s" % t
-		say(strings)
-
-	return "end of notes"
+    for row in conn.execute('SELECT text FROM notes ORDER BY username'):
+        print(row)
+        row=str(row)
+        say(row)
+        time.sleep(1)
+        say("next note")
+        time.sleep(1)
+    return "end of notes"

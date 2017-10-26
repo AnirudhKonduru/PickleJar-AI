@@ -12,4 +12,5 @@ triggers = {
 
 def datefunc(s):
     print(str(datetime.now().date()))
+    say(str(datetime.now().date()))
     return str(datetime.now().date().strftime('%A %d %B %Y'))
