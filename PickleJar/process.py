@@ -5,7 +5,8 @@ INSTALLED_PICKLES = [
     "gen_convo",
     "date_time",
     "notes",
-    "tweet"
+    "tweet",
+    "rvce_results"
 ]
 
 

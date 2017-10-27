@@ -14,14 +14,9 @@ api = tweepy.API(auth)
 
 
 triggers = {
-<<<<<<< HEAD
 
 'tweet':[['send','tweet']],
 'read_tweet':[['read', 'tweet']]
-
-=======
-    'tweet': [['send', 'tweet']]
->>>>>>> 6518d5df16998ef9085d0f83d571593500aace5b
 }
 
 

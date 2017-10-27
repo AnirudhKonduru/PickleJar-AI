@@ -1,1 +1,1 @@
-{input: ., output: text}
+{input: text, output: text}
