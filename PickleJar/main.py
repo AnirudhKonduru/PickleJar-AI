@@ -2,9 +2,6 @@ import sys
 import yaml
 from process import process
 
-from Senses.input import listen
-from Senses.output import say
-
 
 with open("config.yaml") as stream:
     config = yaml.safe_load(stream)
@@ -24,6 +21,11 @@ for i in range(1, len(sys.argv)-1):
 
 with open("config.yaml", "w") as stream:
     yaml.dump(config, stream)
+
+
+from Senses.input import listen
+from Senses.output import say
+
 
 s = listen()
 print("said: "+s)

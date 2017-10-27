@@ -32,4 +32,4 @@ def listen():
     if config["input"] == "speech":
         return stt()
     else:
-        return raw_input().strip()
+        return input().strip()
