@@ -1,5 +1,5 @@
 import importlib
-
+import re
 
 INSTALLED_PICKLES = [
     "gen_convo",
@@ -11,6 +11,8 @@ INSTALLED_PICKLES = [
 
 
 def process(s):
+    s = re.sub(r'\'s', ' is', s)
+    s = re.sub(r'\'d', ' did', s)
     input_set = s.lower().split()
     stopwords = ['what', 'who', 'is', 'at', 'is', 'he', 'for',
                  'is', 'ourselves', 'hers', 'between', 'yourself',
