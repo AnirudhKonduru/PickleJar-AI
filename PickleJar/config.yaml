@@ -1,1 +1,1 @@
-{input: speech, output: text}
+{input: ., output: text}
