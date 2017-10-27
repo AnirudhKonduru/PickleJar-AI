@@ -6,7 +6,7 @@ with open("config.yaml") as stream:
 
 
 def tts(something):
-    return os.system("espeak \""+something+" \"")
+    return os.system("espeak \""+something+" \" > /dev/null 2>&1")
 
 
 def say(something):

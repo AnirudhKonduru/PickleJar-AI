@@ -11,7 +11,7 @@ INSTALLED_PICKLES = [
 
 
 def process(s):
-    input_set = s.split()
+    input_set = s.lower().split()
     stopwords = ['what', 'who', 'is', 'at', 'is', 'he', 'for',
                  'is', 'ourselves', 'hers', 'between', 'yourself',
                  'but', 'again', 'there', 'about', 'once', 'during',
