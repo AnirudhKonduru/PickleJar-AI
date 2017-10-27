@@ -1,5 +1,4 @@
 import pickle
-
 pickle.init()
 from Senses.input import listen
 from Senses.output import say
