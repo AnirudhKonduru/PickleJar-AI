@@ -1,19 +1,19 @@
-from Senses.stt import listen
-from Senses.tts import say
+from Senses.input import listen
+from Senses.output import say
 
 import random
 
 triggers = {
 
-'who_are_you':[['who','are','you'], ['your', 'name']]
+    'who_are_you': [['who', 'are', 'you'], ['your', 'name']]
 
 }
 
 
 def who_are_you(s):
     resp=[
-    "Hi, I'm Oorugai",
-    "My name is Pickle Bot"
+        "Hi, I'm Oorugai",
+        "My name is Pickle Bot"
     ]
     return random.choice(resp)
 

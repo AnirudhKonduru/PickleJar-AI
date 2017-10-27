@@ -1,8 +1,13 @@
 import speech_recognition as sr
+import yaml
+
 r = sr.Recognizer()
 
+with open("config.yaml") as stream:
+    config = yaml.load(stream)
 
-def listen():
+
+def stt():
     with sr.Microphone() as source:
         r.adjust_for_ambient_noise(source)
         print("Listening...")
@@ -18,6 +23,13 @@ def listen():
         print("Failed to recognize Audio")
     except sr.RequestError as e:
         print("Failed to request from google SR; {0}".format(e))
-    if text=="":
+    if text == "":
         return None
     return text
+
+
+def listen():
+    if config["input"] == "speech":
+        return stt()
+    else:
+        return raw_input().strip()

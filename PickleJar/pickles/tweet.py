@@ -1,6 +1,6 @@
 import tweepy
-from Senses.stt import listen
-from Senses.tts import say
+from Senses.input import listen
+from Senses.output import say
 
 consumer_key = 'ePwNSaFxX9PghCkcJGmTnyjjZ'
 consumer_secret = 'Yu307s1NkO7lr9Yszr3GftFVPSalLAZlQwuFui7ZCX6DltbqHT'
@@ -14,16 +14,21 @@ api = tweepy.API(auth)
 
 
 triggers = {
+<<<<<<< HEAD
 
 'tweet':[['send','tweet']],
 'read_tweet':[['read', 'tweet']]
 
+=======
+    'tweet': [['send', 'tweet']]
+>>>>>>> 6518d5df16998ef9085d0f83d571593500aace5b
 }
+
 
 def tweet(s):
     say("What should i tweet?")
-    tweet = listen()
-    api.update_status(status= tweet)
+    tweet_text = listen()
+    api.update_status(status=tweet_text)
     return "Tweet Sent"
 
 
